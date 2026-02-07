@@ -95,12 +95,12 @@
 
     <div class="container" id="login-ui">
         <div class="login-section">
-            <div class="brand-name">OIKOS</div>
+            <div class="brand-name">Komercial</div>
             <h2>Acceso al Portal</h2>
             <p class="instruction">Introduce tu correo y clave. Si ya ingresaste hoy, tu sesión estará activa por 6 horas.</p>
             
             <div class="input-wrapper">
-                <input type="email" id="email" placeholder="ejemplo@oikos.com.co" spellcheck="false">
+                <input type="email" id="email" placeholder="ejemplo@Komercial.com.co" spellcheck="false">
             </div>
             
             <button class="btn-request" onclick="requestToken()">VALIDAR USUARIO</button>
@@ -114,7 +114,7 @@
         </div>
         <div class="welcome-section">
             <h1>Analytics</h1>
-            <p>Grupo Empresarial OIKOS S.A.S</p>
+            <p>Komercial C&C</p>
         </div>
     </div>
 
@@ -131,7 +131,7 @@
 
         // 1. Lógica de Sesión Recordada (6 Horas)
         window.onload = () => {
-            const savedSession = JSON.parse(localStorage.getItem('oikos_auth_token'));
+            const savedSession = JSON.parse(localStorage.getItem('Komercial_auth_token'));
             if(savedSession) {
                 const now = new Date().getTime();
                 if(now - savedSession.time < 21600000) { // 6 horas
@@ -172,7 +172,7 @@
                 const data = await res.json();
                 if(data.status === 'success') {
                     // Guardamos la sesión localmente
-                    localStorage.setItem('oikos_auth_token', JSON.stringify({
+                    localStorage.setItem('Komercial_auth_token', JSON.stringify({
                         time: new Date().getTime(),
                         url: data.url
                     }));
